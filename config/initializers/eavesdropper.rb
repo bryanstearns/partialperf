@@ -3,7 +3,7 @@ class Eavesdropper < ActiveSupport::LogSubscriber
   def process_action(event)
     File.open("log/#{Rails.env}.#{event.payload[:action]}.samples", 'a') do |f|
       f.puts event.payload[:view_runtime]
-    end
+    end unless event.payload[:action] == 'index'
   end
 end
 

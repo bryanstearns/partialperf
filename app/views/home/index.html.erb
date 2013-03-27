@@ -1,0 +1,6 @@
+<h1>Home#index</h1>
+<ul>
+  <% HomeController::MEASUREMENT_ACTIONS.each do |action| %>
+    <li><%= link_to action, send("home_#{action}_path") %></li>
+  <% end %>
+</ul>
