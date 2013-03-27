@@ -1,15 +1,11 @@
 
 desc "Collect samples of each view"
-task :collect do
-  actions = %w[
-    single_view
-    render_loop
-    render_collection
-    render_content_tag_helper
-    render_raw_html_helper
-  ]
+task collect: :environment do
   `/bin/rm -f log/*.samples`
-  actions.each do |action|
-    10.times { `wget localhost:3000/home/#{action} -O /dev/null` }
+  HomeController::MEASUREMENT_ACTIONS.each do |action|
+    10.times do
+      `wget 127.0.0.1:3000/home/#{action} -O /dev/null`
+      abort unless $?.success?
+    end
   end
 end
