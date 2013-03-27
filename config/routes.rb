@@ -3,6 +3,10 @@ Partialperf::Application.routes.draw do
 
   get "home/render_collection"
 
+  get "home/render_content_tag_helper"
+
+  get "home/render_raw_html_helper"
+
   get "home/single_view"
 
   # The priority is based upon order of creation:
