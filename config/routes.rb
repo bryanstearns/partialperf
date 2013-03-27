@@ -1,4 +1,10 @@
 Partialperf::Application.routes.draw do
+  get "home/render_loop"
+
+  get "home/render_collection"
+
+  get "home/single_view"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
