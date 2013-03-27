@@ -1,4 +1,6 @@
 Partialperf::Application.routes.draw do
+  root to: "home#index"
+
   get "home/render_loop"
 
   get "home/render_collection"
