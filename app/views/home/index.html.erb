@@ -4,3 +4,5 @@
     <li><%= link_to action, send("home_#{action}_path") %></li>
   <% end %>
 </ul>
+
+<%= tag('div', id: 'graph', data: { samples: to_series(@samples) }) %>
